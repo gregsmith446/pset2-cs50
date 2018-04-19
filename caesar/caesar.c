@@ -1,3 +1,10 @@
+/** I appreciate the prompt when no key is passed - One improvment could be specifying to few to many args.
+I like how you extrapolated some of the calculations into their own variables  Ex int letter.
+On that note it seems you are also checking against that variable to know whether you need to wrap around,
+This is solid logic, but at the sametime produces extra variables and memory utilization. Its seems as though modulous might be
+appropriate and may be shorter in the end because you may not need extra variables and an if statement to check it. Though modulous
+may be a better tool I admit your code is less mental overhead and easy to reason about.
+**/
 // program will prompt for a message to be encrypted (plaintext)
 // and outputs an encrypted version of that message (cipertext)
 // the plaintext is shifted based off the numerical key given in the command line

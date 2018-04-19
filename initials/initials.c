@@ -5,7 +5,10 @@
 #include<cs50.h>
 #include <string.h>
 #include <ctype.h>
-
+/**
+ I like how you handled all your cases in one if statement, my approach was to treat them as
+ different cases - but your code is nice and DRY(Dont repeat yourself). Good Job.
+ **/
 
 int main(void)
 {

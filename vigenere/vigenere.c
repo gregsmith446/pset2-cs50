@@ -2,6 +2,19 @@
 // and outputs an encrypted version of that message (ciphertext)
 // the encrypted text is shifted based on the text key given in the command line
 
+/**
+Nice error checking - I like programs to say explicitly how many args are needed -but it's not neccesaary in this case.
+I love the comments - but remember good code is can be self documenting, your variable k would not need a comment explaining what
+it does if it was name something like keywordIndex. It can be difficult to name things appropriately while trying to solve an algorithm.
+I typically go back at the end and look at the context.
+The extrapolation of certain calculations in varibles like modulo can make code easier to reason about.
+The caveat with that from what I heard to proffesionals is that it is situational.
+In C where space can be a concern you may want to give up readability for performance - I don think it matter for this exercise though.
+On the flipside if this is running on a resource rich env like a browser - I would much rather read your code here, than have it "cleverly"
+done in one line where it takes me 20 minutes to reason what is going on.
+Other than some minor philosophical considerations, I feel like the code is well crafted - Good Job.
+ **/
+
 #include<stdio.h> // printf
 #include<cs50.h> // get_string
 #include <string.h> // strlen
@@ -38,7 +51,7 @@ int main(int argc, string argv[])
     printf("ciphertext: "); // print out the "ciphertext: " portion before the below processes
 
     // int k to hold the keyword position
-    int k = 0;
+    int keywordIndex = 0;
 
     //loop through plaintext but convert only alpha chars
     for (int j = 0; j < strlen(plaintext); j++)
@@ -47,7 +60,7 @@ int main(int argc, string argv[])
         if (isalpha(plaintext[j]))
         {
             // modulo var to store keyword index
-            int modulo = k % strlen(keyword);
+            int modulo = keywordIndex % strlen(keyword);
 
             //if lowercase letters
             if (islower(plaintext[j]))
@@ -67,7 +80,6 @@ int main(int argc, string argv[])
             }
             else
             {
-                //
                 keyword[modulo] = toupper(keyword[modulo]);
 
                 if (plaintext[j] + (keyword[modulo] - 'A') > 'Z')
@@ -81,7 +93,7 @@ int main(int argc, string argv[])
             }
 
             //increment the keyword index only after 1 alpha char has completed being enciphered
-            k++;
+            keywordIndex++;
         }
     }
     printf("%s\n", plaintext);
