@@ -3,15 +3,15 @@
 // the encrypted text is shifted based on the text key given in the command line
 
 /**
-Nice error checking - I like programs to say explicitly how many args are needed -but it's not neccesaary in this case.
-I love the comments - but remember good code is can be self documenting, your variable k would not need a comment explaining what
+Nice error checking - I like programs to say explicitly how many args are needed - but it's not neccesaary in this case.
+I like the comments - but remember good code is can be self documenting, your variable k would not need a comment explaining what
 it does if it was name something like keywordIndex. It can be difficult to name things appropriately while trying to solve an algorithm.
 I typically go back at the end and look at the context.
-The extrapolation of certain calculations in varibles like modulo can make code easier to reason about.
-The caveat with that from what I heard to proffesionals is that it is situational.
-In C where space can be a concern you may want to give up readability for performance - I don think it matter for this exercise though.
+The extrapolation of certain calculations in varaibles like modulo can make code easier to reason about.
+The caveat with that is that it is situational.
+In C where resources can be a concern you may want to give up readability for performance - I don think it matter for this exercise though.
 On the flipside if this is running on a resource rich env like a browser - I would much rather read your code here, than have it "cleverly"
-done in one line where it takes me 20 minutes to reason what is going on.
+done in one line that is very difficult to understand.
 Other than some minor philosophical considerations, I feel like the code is well crafted - Good Job.
  **/
 

@@ -1,10 +1,18 @@
-/** I appreciate the prompt when no key is passed - One improvment could be specifying to few to many args.
+/**
+I like your comments about what the libraries do.
+I appreciate the prompt when no key is passed - One improvment could be specifying too few/too many args.
 I like how you extrapolated some of the calculations into their own variables  Ex int letter.
-On that note it seems you are also checking against that variable to know whether you need to wrap around,
-This is solid logic, but at the sametime produces extra variables and memory utilization. Its seems as though modulous might be
-appropriate and may be shorter in the end because you may not need extra variables and an if statement to check it. Though modulous
-may be a better tool I admit your code is less mental overhead and easy to reason about.
+On that note it seems like your checking against that variable to know whether you need to wrap around?
+If so, I like how you handled that, but at the same time it produces extra variables/memory utilization. It seems as though modulous might be
+appropriate and may be shorter in the end because you may not need extra variables/if statement.
+Avoid nesting loops if you can - Your for loop insures you touch every character once - running the while loop within the for loop
+might be a bit "extra". Also when a human is reading it(yourself included) it adds another layer of complexity to hold in memory
+while you try to reason about the code.
+I don't know if you employ psuedocode as part of your process - but I find it helpful and it helps me avoid coding myself into a corner.
+I also like to analyze patterns before hand - I find that alot of code problems share similar patterns and solutions.
+Hopefully this was helpful, if you would like to speak further on any of this let me know.
 **/
+
 // program will prompt for a message to be encrypted (plaintext)
 // and outputs an encrypted version of that message (cipertext)
 // the plaintext is shifted based off the numerical key given in the command line
@@ -58,6 +66,7 @@ int main(int argc, string argv[])
                 {
                     letter -= 26; //go back down 1 at a time or wrap back around
                 }
+
                 letter += 'a';
                 ciphertext = letter + keyAsInt; //take the indexed lowercase letter, shift by key# and set = to ciphertext
                 printf("%c", ciphertext); //print each shifted char
